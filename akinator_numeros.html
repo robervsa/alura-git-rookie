@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA - Adivina el número que "penso" el sistema</h1>
+<br>
+
+
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+        document.write("<hr>");
+        document.write("<br>");
+        document.write("<br>");    
+    }  
+
+    function imprimir(frase) {
+        document.write("<big>"+frase+"</big>");
+        saltarLinea();
+    }
+
+    function genNumero(){
+        return Math.round(Math.random() * 10);
+    }
+
+    
+    var numeroPensado = genNumero();
+    var contador = 1;
+
+    while(contador <= 3){
+
+        var numeroLanzado = parseInt(prompt("Ingrese un numero entre el 0-10"));
+
+        if(numeroLanzado == numeroPensado){
+
+            alert("Usted acerto el numero pensado fue " + numeroPensado);
+            break;
+
+        }else{
+
+            alert("Usted erró");
+
+        }
+
+        contador++;
+
+    }
+
+    if(numeroLanzado == numeroPensado){
+
+        imprimir("Usted adivino en el intento " + contador + " con el número " + numeroLanzado);
+
+    }else{
+
+        imprimir("Usted erró el número pensado era " + numeroPensado);
+
+    }    
+        
+</script>
